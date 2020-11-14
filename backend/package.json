@@ -1,0 +1,24 @@
+{
+  "name": "loan-manager-server",
+  "version": "1.0.0",
+  "description": "loan manager server app developed with Node Js and Express, serves a ngular frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SGGaita/microfinance-loan-savings-manager.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "Mysql"
+  ],
+  "author": "Steve Gaita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SGGaita/microfinance-loan-savings-manager/issues"
+  },
+  "homepage": "https://github.com/SGGaita/microfinance-loan-savings-manager#readme"
+}
