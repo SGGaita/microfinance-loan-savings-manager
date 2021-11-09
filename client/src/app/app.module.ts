@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +25,12 @@ import { AppButtonComponent } from './components/app-button/app-button.component
 import { registerLocaleData } from '@angular/common';
 import localeEn from '@angular/common/locales/en';
 import { UserDropdownMenuComponent } from './pages/main/header/user-dropdown-menu/user-dropdown-menu.component';
+import { GroupComponent } from './views/group/group.component';
+import { GroupListComponent } from './views/group-list/group-list.component';
+import { AccountsComponent } from './views/accounts/accounts.component';
+import { AccountsListComponent } from './views/accounts-list/accounts-list.component';
+import { UsersComponent } from './views/users/users.component';
+import { StaffComponent } from './views/staff/staff.component';
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -42,12 +50,21 @@ registerLocaleData(localeEn, 'en-EN');
     NotificationsDropdownMenuComponent,
     AppButtonComponent,
     UserDropdownMenuComponent,
+    GroupComponent,
+    GroupListComponent,
+    AccountsComponent,
+    AccountsListComponent,
+    UsersComponent,
+    StaffComponent,
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    NgxPaginationModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-bottom-right',

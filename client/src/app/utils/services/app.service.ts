@@ -15,7 +15,7 @@ export class AppService {
 
   login() {
     localStorage.setItem('token', 'LOGGED_IN');
-    this.router.navigate(['/']);
+    this.router.navigate(['/dashboard']);
   }
 
   register() {

@@ -1,7 +1,7 @@
 {
   "name": "loan-manager-server",
   "version": "1.0.0",
-  "description": "loan manager server app developed with Node Js and Express, serves a ngular frontend",
+  "description": "loan manager server app developed with Node Js and Express, serves angular frontend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,27 @@
   ],
   "author": "Steve Gaita",
   "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mime": "^2.5.2",
+    "moments": "0.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "mysqli": "^3.0.11",
+    "node-datetime": "^2.1.2",
+    "nodemailer": "^6.4.11",
+    "nodemon": "^2.0.14",
+    "path": "^0.12.7",
+    "sequelize": "^6.3.4"
+  },
   "bugs": {
     "url": "https://github.com/SGGaita/microfinance-loan-savings-manager/issues"
   },
