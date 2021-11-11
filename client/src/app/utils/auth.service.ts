@@ -118,7 +118,6 @@ export class AuthService {
   }
 
   public login(user: TokenPayload) {
-    console.log("User payload", user)
     return this.request('post', 'login', user);
   }
 

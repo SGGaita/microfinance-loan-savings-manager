@@ -22,7 +22,7 @@
         />
       </div>
       <div class="info">
-        <a [routerLink]="['/dashboard/profile']" class="d-block">Steve Gaita</a>
+        <a [routerLink]="['/dashboard/profile']" class="d-block">{{authService.getUserDetails().userName | uppercase}}</a>
       </div>
     </div>
 

@@ -31,6 +31,7 @@ import { AccountsComponent } from './views/accounts/accounts.component';
 import { AccountsListComponent } from './views/accounts-list/accounts-list.component';
 import { UsersComponent } from './views/users/users.component';
 import { StaffComponent } from './views/staff/staff.component';
+import { TransactionComponent } from './views/transactions/transaction/transaction.component';
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -56,6 +57,7 @@ registerLocaleData(localeEn, 'en-EN');
     AccountsListComponent,
     UsersComponent,
     StaffComponent,
+    TransactionComponent,
   ],
   imports: [
     

@@ -14,6 +14,8 @@ import { AuthGuard } from './utils/guards/auth.guard';
 import { NonAuthGuard } from './utils/guards/non-auth.guard';
 import { UsersComponent } from './views/users/users.component';
 import {StaffComponent } from './views/staff/staff.component';
+import { TransactionComponent } from './views/transactions/transaction/transaction.component';
+
 
 
 const routes: Routes = [
@@ -50,6 +52,10 @@ const routes: Routes = [
           {path:'', redirectTo: 'list', pathMatch: 'full'},
           {path: 'list', component: AccountsListComponent}
         ]
+      },
+      {
+        path: 'transactions',
+        component: TransactionComponent
       },
       {
         path: 'user',

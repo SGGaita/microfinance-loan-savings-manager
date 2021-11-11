@@ -6,6 +6,7 @@ import {
   ElementRef,
   Renderer2,
 } from '@angular/core';
+import { AuthService } from 'src/app/utils/auth.service';
 import { AppService } from 'src/app/utils/services/app.service';
 
 @Component({
@@ -27,7 +28,8 @@ export class UserDropdownMenuComponent implements OnInit {
   constructor(
     private elementRef: ElementRef,
     private renderer: Renderer2,
-    private appService: AppService
+    private appService: AppService,
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {

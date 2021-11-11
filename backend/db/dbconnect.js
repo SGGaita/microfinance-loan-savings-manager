@@ -1,6 +1,11 @@
 const Sequelize = require('sequelize');
 const mysqlConnection = {}
-const sequelize = new Sequelize('capep2', 'root', '', {
+require('dotenv').config()
+
+var Db = process.env.DB
+var Db_user = process.env.DBUSER
+
+const sequelize = new Sequelize(Db, Db_user , '', {
   host: 'localhost', 
   dialect: 'mysql',
 

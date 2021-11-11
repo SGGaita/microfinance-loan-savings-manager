@@ -1,13 +1,18 @@
   
 const Mysqli = require('mysqli');
 
+require('dotenv').config()
+
+var Db = process.env.DB
+var Db_user = process.env.DBUSER
+
 
 let conn = new Mysqli({
     Host: 'localhost', // IP/domain name 
     port:'' , // port, default 3306 
-    user: 'root', // username 
+    user: Db_user, // username 
     passwd: '', // password 
-    db: 'capep2'
+    db: Db
 });
 
 let db = conn.emit(false, '');
