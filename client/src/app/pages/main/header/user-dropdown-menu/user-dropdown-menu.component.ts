@@ -53,6 +53,6 @@ export class UserDropdownMenuComponent implements OnInit {
   }
 
   logout() {
-    this.appService.logout();
+    this.authService.logout();
   }
 }

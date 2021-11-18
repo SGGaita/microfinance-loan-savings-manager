@@ -13,10 +13,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AuthGuard } from './utils/guards/auth.guard';
 import { NonAuthGuard } from './utils/guards/non-auth.guard';
 import { UsersComponent } from './views/users/users.component';
-import {StaffComponent } from './views/staff/staff.component';
+import { StaffComponent } from './views/staff/staff.component';
 import { TransactionComponent } from './views/transactions/transaction/transaction.component';
-
-
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -40,30 +38,30 @@ const routes: Routes = [
       {
         path: 'group',
         component: GroupComponent,
-        children:[
-          {path:'', redirectTo: 'list', pathMatch: 'full'},
-          {path: 'list', component: GroupListComponent}
-        ]
+        children: [
+          { path: '', redirectTo: 'list', pathMatch: 'full' },
+          { path: 'list', component: GroupListComponent },
+        ],
       },
       {
         path: 'accounts',
         component: AccountsComponent,
-        children:[
-          {path:'', redirectTo: 'list', pathMatch: 'full'},
-          {path: 'list', component: AccountsListComponent}
-        ]
+        children: [
+          { path: '', redirectTo: 'list', pathMatch: 'full' },
+          { path: 'list', component: AccountsListComponent },
+        ],
       },
       {
         path: 'transactions',
-        component: TransactionComponent
+        component: TransactionComponent,
       },
       {
         path: 'user',
-        component: UsersComponent
+        component: UsersComponent,
       },
       {
         path: 'staff',
-        component: StaffComponent
+        component: StaffComponent,
       },
       {
         path: '',

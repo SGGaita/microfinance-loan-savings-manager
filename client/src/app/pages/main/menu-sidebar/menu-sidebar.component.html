@@ -5,7 +5,7 @@
       src="assets/img/AdminLTELogo.png"
       alt="AdminLTE Logo"
       class="brand-image img-circle elevation-3"
-      style="opacity: 0.8;"
+      style="opacity: 0.8"
     />
     <span class="brand-text font-weight-light">CAPEP KENYA</span>
   </a>
@@ -22,7 +22,9 @@
         />
       </div>
       <div class="info">
-        <a [routerLink]="['/dashboard/profile']" class="d-block">{{authService.getUserDetails().userName | uppercase}}</a>
+        <a [routerLink]="['/dashboard/profile']" class="d-block">{{
+          authService.getUserDetails().userName | uppercase
+        }}</a>
       </div>
     </div>
 
@@ -39,9 +41,7 @@
         <li class="nav-item">
           <a [routerLink]="['/dashboard']" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Dashboard
-            </p>
+            <p>Dashboard</p>
           </a>
         </li>
 
@@ -49,25 +49,19 @@
 
         <li class="nav-item">
           <a [routerLink]="['/dashboard/group']" class="nav-link">
-            <p>
-              Group Manager
-            </p>
+            <p>Group Manager</p>
           </a>
         </li>
-        
+
         <li class="nav-item">
           <a [routerLink]="['/dashboard/accounts']" class="nav-link">
-            <p>
-              Accounts Manager
-            </p>
+            <p>Accounts Manager</p>
           </a>
         </li>
 
         <li class="nav-item">
           <a [routerLink]="['/dashboard/transactions']" class="nav-link">
-            <p>
-              Transactions Manager
-            </p>
+            <p>Transactions Manager</p>
           </a>
         </li>
 
@@ -75,20 +69,15 @@
 
         <li class="nav-item">
           <a [routerLink]="['/dashboard/user']" class="nav-link">
-            <p>
-              User Manager
-            </p>
+            <p>User Manager</p>
           </a>
         </li>
 
         <li class="nav-item">
           <a [routerLink]="['/dashboard/staff']" class="nav-link">
-            <p>
-              Staff Manager
-            </p>
+            <p>Staff Manager</p>
           </a>
         </li>
-       
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

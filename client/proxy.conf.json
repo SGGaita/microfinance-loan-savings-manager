@@ -1,9 +1,7 @@
 {
-    "/api/*":{
-        "target":
-        "http://localhost:3001",
-        "logLevel": "debug",
-        "secure": false
-        
-      } 
+  "/api/*": {
+    "target": "http://localhost:3001",
+    "logLevel": "debug",
+    "secure": false
+  }
 }

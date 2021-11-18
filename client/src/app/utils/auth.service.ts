@@ -1,84 +1,86 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse,
+} from '@angular/common/http';
 import { Observable, throwError, of } from 'rxjs';
 import { map, retry, catchError } from 'rxjs/operators';
 
 import 'rxjs/operators';
-//import 'rxjs/add/operator/toPromise'; 
+//import 'rxjs/add/operator/toPromise';
 import { Router } from '@angular/router';
 //import { Role } from '../_models/role.enum';
 
 export interface UserDetails {
-  user_id: number,
-  fname: string,
-  lname:string,
-  userName: string,
-  email: string,
-  password: string,
+  user_id: number;
+  fname: string;
+  lname: string;
+  userName: string;
+  email: string;
+  password: string;
   roles: string;
-  exp: number,
-  iat: number
+  exp: number;
+  iat: number;
 }
 
 interface TokenResponse {
-  token: string
+  token: string;
 }
 
 export interface TokenPayload {
   //user_id: number,
-  fname: string,
+  fname: string;
   lname: string;
-  username: string,
-  email: string,
-  password: string,
-  roles: string,
+  username: string;
+  email: string;
+  password: string;
+  roles: string;
   status: string;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  private token: string;
 
-  private token: string
-
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
   //save token
   public saveToken(token: string): void {
-    localStorage.setItem('userToken', token)
+    localStorage.setItem('userToken', token);
     this.token = token;
   }
-
 
   //get token
   public getToken(): string {
     if (!this.token) {
-      this.token = localStorage.getItem('userToken')
+      this.token = localStorage.getItem('userToken');
     }
-    return this.token
+    return this.token;
   }
 
   //get user details
   public getUserDetails(): UserDetails {
-    const token = this.getToken()
-    let payload
+    const token = this.getToken();
+    let payload;
     if (token) {
-      payload = token.split('.')[1]
-      payload = window.atob(payload)
-      return JSON.parse(payload)
+      payload = token.split('.')[1];
+      payload = window.atob(payload);
+      return JSON.parse(payload);
     } else {
-      return null
+      return null;
     }
   }
 
   //Logged in
   public isLoggedIn(): boolean {
-    const user = this.getUserDetails()
+    const user = this.getUserDetails();
     if (user) {
-      return user.exp > Date.now() / 1000
+      return user.exp > Date.now() / 1000;
     } else {
-      return false
+      return false;
     }
   }
 
@@ -92,13 +94,19 @@ export class AuthService {
     }
   }*/
 
-  private request(method: 'post' | 'get', type: 'login' | 'register' | 'profile', user?: TokenPayload): Observable<any> {
+  private request(
+    method: 'post' | 'get',
+    type: 'login' | 'register' | 'profile',
+    user?: TokenPayload
+  ): Observable<any> {
     let base;
 
     if (method === 'post') {
       base = this.http.post(`/api/${type}`, user);
     } else {
-      base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` } });
+      base = this.http.get(`/api/${type}`, {
+        headers: { Authorization: `Bearer ${this.getToken()}` },
+      });
     }
 
     const request = base.pipe(
@@ -127,9 +135,12 @@ export class AuthService {
 
   //logout
   public logout(): void {
-    this.token = ''
-    window.localStorage.removeItem('userToken')
-    this.router.navigateByUrl('/login')
+    if (window.confirm('Are you sure you want logout?')) {
+      this.token = '';
+      window.localStorage.removeItem('userToken');
+      this.router.navigateByUrl('/login');
+    } else {
+      return;
+    }
   }
-
 }

@@ -22,8 +22,8 @@ export class MenuSidebarComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     //load userDetails
-   this.userName = this.authService.getUserDetails().userName
-   console.log('user details', this.userName)
+    this.userName = this.authService.getUserDetails().userName;
+    console.log('user details', this.userName);
   }
 
   ngAfterViewInit() {

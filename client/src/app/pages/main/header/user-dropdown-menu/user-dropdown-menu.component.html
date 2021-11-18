@@ -16,7 +16,8 @@
       <img [src]="user.image" class="img-circle elevation-2" alt="User Image" />
 
       <p>
-        {{authService.getUserDetails().userName | uppercase}} - {{authService.getUserDetails().roles | uppercase}}
+        {{ authService.getUserDetails().userName | uppercase }} -
+        {{ authService.getUserDetails().roles | uppercase }}
         <small>Last login</small>
       </p>
     </li>

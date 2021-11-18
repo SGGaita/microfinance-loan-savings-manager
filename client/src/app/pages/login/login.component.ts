@@ -9,7 +9,7 @@ import { AuthService } from '../../utils/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
   pageTitle = 'CAPEP KENYA | Login';
 
   loginForm: FormGroup;
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit{
   errorMsg: any;
   loading = false;
   public loadingMsg = 'Authenticating...Please wait';
-  returnUrl: string
+  returnUrl: string;
 
   constructor(
     private formbuilder: FormBuilder,
@@ -40,8 +40,9 @@ export class LoginComponent implements OnInit{
     });
 
     //get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
-    console.log("This url", this.returnUrl)
+    this.returnUrl =
+      this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
+    console.log('This url', this.returnUrl);
   }
 
   login() {
@@ -55,12 +56,10 @@ export class LoginComponent implements OnInit{
 
     this.authService.login(this.loginForm.value).subscribe(
       (data) => {
-        
-        console.log("data", data)
+        console.log('data', data);
         this.loading = false;
         this.router.navigate([this.returnUrl]);
-        console.log("user details", this.authService.getUserDetails())
-        
+        console.log('user details', this.authService.getUserDetails());
       },
       (err) => {
         this.errorMsg = err.error.reason;
