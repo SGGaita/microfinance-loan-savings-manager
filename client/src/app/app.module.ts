@@ -27,12 +27,21 @@ import { registerLocaleData } from '@angular/common';
 import localeEn from '@angular/common/locales/en';
 import { UserDropdownMenuComponent } from './pages/main/header/user-dropdown-menu/user-dropdown-menu.component';
 import { GroupComponent } from './views/group/group.component';
-import { GroupListComponent } from './views/group-list/group-list.component';
+import { GroupListComponent } from './views/group/group-list/group-list.component';
 import { AccountsComponent } from './views/accounts/accounts.component';
-import { AccountsListComponent } from './views/accounts-list/accounts-list.component';
+import { AccountsListComponent } from './views/accounts/accounts-list/accounts-list.component';
 import { UsersComponent } from './views/users/users.component';
 import { StaffComponent } from './views/staff/staff.component';
 import { TransactionComponent } from './views/transactions/transaction/transaction.component';
+import { TransactionsListComponent } from './views/transactions/transactions-list/transactions-list.component';
+import { OrderByPipe } from './_filter/order-by.pipe';
+import { ResourcesComponent } from './views/resources/resources.component';
+import { ListComponent } from './views/resources/list/list.component';
+import { CreateComponent } from './views/resources/create/create.component';
+import { ReportsComponent } from './views/reports/reports.component';
+import { UsersListComponent } from './views/users/users-list/users-list.component';
+import { UserCreateComponent } from './views/users/user-create/user-create.component';
+import { UserEditComponent } from './views/users/user-edit/user-edit.component';
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -59,6 +68,15 @@ registerLocaleData(localeEn, 'en-EN');
     UsersComponent,
     StaffComponent,
     TransactionComponent,
+    TransactionsListComponent,
+    OrderByPipe,
+    ResourcesComponent,
+    ListComponent,
+    CreateComponent,
+    ReportsComponent,
+    UsersListComponent,
+    UserCreateComponent,
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,

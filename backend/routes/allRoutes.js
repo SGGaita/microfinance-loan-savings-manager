@@ -27,7 +27,7 @@ router.post('/register', authenticationController.addNewUser);
 router.post('/login', authenticationController.loginUser);
 
 //2.Group endpoints
-router.get('/groups', groupController.getAllGroups);
+router.get('/groups/', groupController.getAllGroups);
 
 
 module.exports = router;

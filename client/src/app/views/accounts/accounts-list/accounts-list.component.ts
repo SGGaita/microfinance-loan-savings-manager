@@ -12,6 +12,10 @@ export class AccountsListComponent implements OnInit {
   pageTitle = 'Accounts Manager : CAPEP KENYA';
   groups: any;
   count: any;
+  public searchText: string;
+  public searchGname: string;
+  public searchGcode: string;
+  _id:number =12;
 
   p: number = 1;
 
@@ -33,6 +37,9 @@ export class AccountsListComponent implements OnInit {
       this.groups = data.groups;
       this.spinner.hide();
       //console.log(data)
-    });
+    },err => {
+      console.log("Error", err)
+    }
+    );
   }
 }

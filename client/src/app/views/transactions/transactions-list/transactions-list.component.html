@@ -1,0 +1,114 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "blue" type = "ball-clip-rotate-multiple" [fullScreen] = "false"><p style="color: white; font-size:20px;  margin-top:50px">loading...</p> </ngx-spinner>
+<!-- Main content -->
+<section class="content">
+  <!-- Default box -->
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Group list ({{ count }} groups)</h3>
+
+        <div class="card-tools">
+          <button
+            type="button"
+            class="btn btn-tool"
+            data-widget="collapse"
+            data-toggle="tooltip"
+            title="Collapse"
+          >
+            <i class="fa fa-minus"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-tool"
+            data-widget="remove"
+            data-toggle="tooltip"
+            title="Remove"
+          >
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="filter-section d-flex flex-row justify-content-start pb-2">
+          <span>
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              placeholder="Filter by branch name..."
+            />
+          </span>
+
+          <span>
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              placeholder="Filter by group name..."
+            />
+          </span>
+
+          <span>
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              placeholder="Filter by group code..."
+            />
+          </span>
+        </div>
+        <!-- Content Wrapper   -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Branch</th>
+              <th>Group</th>
+              <th>Location</th>
+              <th>Total Savings</th>
+
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center no-display" *ngIf="count < 1">
+              <td class="text-center" colSpan="6">No orders in list</td>
+            </tr>
+            <tr
+              *ngFor="
+                let g of groups
+                  | paginate
+                    : { itemsPerPage: 10, currentPage: p, totalItems: count }
+              "
+            >
+              <td>{{ g.group_code }}</td>
+              <td>{{ g.branch_name }}</td>
+              <td>{{ g.group_name }}</td>
+              <td>{{ g.group_location }}</td>
+              <td>{{ g.group_town }}</td>
+
+              <td><span><a routerLink="#">Savings</a></span> / <span><a routerLink="#">Loans</a></span> / <span><a routerLink="#">Dividends</a></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <!--End Content Wrapper   -->
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <pagination-controls
+          (pageChange)="p = $event"
+          maxSize="9"
+          directionLinks="true"
+          autoHide="true"
+          responsive="true"
+        ></pagination-controls>
+      </div>
+      <!-- /.card-footer-->
+    </div>
+  </div>
+  <!-- /.card -->
+</section>
+<!-- /.content -->

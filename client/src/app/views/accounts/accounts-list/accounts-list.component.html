@@ -34,8 +34,8 @@
             <input
               class="form-control"
               type="text"
-              name=""
               id=""
+              name="searchText"
               placeholder="Filter by branch name..."
             />
           </span>
@@ -44,7 +44,7 @@
             <input
               class="form-control"
               type="text"
-              name=""
+              name="searchGname"
               id=""
               placeholder="Filter by group name..."
             />
@@ -54,7 +54,7 @@
             <input
               class="form-control"
               type="text"
-              name=""
+              name="searchGcode"
               id=""
               placeholder="Filter by group code..."
             />
@@ -90,7 +90,7 @@
               <td>{{ g.group_location }}</td>
               <td>{{ g.group_town }}</td>
 
-              <td><span>View</span> / <span>New Membership<span></td>
+              <td><span><a routerLink="#">View</a></span> / <span><a routerLink="#">New Membership</a></span></td>
             </tr>
           </tbody>
         </table>

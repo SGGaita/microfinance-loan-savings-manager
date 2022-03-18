@@ -9,6 +9,8 @@ var mime = require("mime");
 
 //Get all groups
 const getAllGroups = (req, res) => { // Sending Page Query Parameter is mandatory http://localhost:3636/api/products?page=1
+    let branch_id = req.body.id
+    console.log("branch id", branch_id)
     let page = (req.query.page !== undefined && req.query.page !== 0) ? req.query.page : 1;
     const limit = (req.query.limit !== undefined && req.query.limit !== 0) ? req.query.limit : 10; // set limit of items per page
     let startValue;

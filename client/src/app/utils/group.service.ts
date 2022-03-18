@@ -23,7 +23,7 @@ export class GroupService {
 
   // retrieving groups
   getAllGroups(): Observable<any> {
-    return this.http.get(this.server_url + '/groups').pipe(
+    return this.http.get(this.server_url + '/groups/').pipe(
       catchError((error) => {
         let errorMsg: string;
         if (error.error instanceof ErrorEvent) {

@@ -4,12 +4,13 @@ import { GroupService } from 'src/app/utils/group.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-group-list',
-  templateUrl: './group-list.component.html',
-  styleUrls: ['./group-list.component.scss'],
+  selector: 'app-transactions-list',
+  templateUrl: './transactions-list.component.html',
+  styleUrls: ['./transactions-list.component.scss']
 })
-export class GroupListComponent implements OnInit {
-  pageTitle = 'Group Manager : CAPEP KENYA';
+export class TransactionsListComponent implements OnInit {
+
+ pageTitle = 'Accounts Manager : CAPEP KENYA';
   groups: any;
   count: any;
 
@@ -35,4 +36,6 @@ export class GroupListComponent implements OnInit {
       //console.log(data)
     });
   }
+
+
 }
