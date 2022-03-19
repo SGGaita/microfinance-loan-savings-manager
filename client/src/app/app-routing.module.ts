@@ -6,6 +6,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { GroupComponent } from './views/group/group.component';
 import { GroupListComponent } from './views/group/group-list/group-list.component';
+import {GroupCreateComponent} from './views/group/group-create/group-create.component';
+import {GroupEditComponent} from './views/group/group-edit/group-edit.component';
 import { AccountsComponent } from './views/accounts/accounts.component';
 import { AccountsListComponent } from './views/accounts/accounts-list/accounts-list.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -17,12 +19,20 @@ import { UsersListComponent } from './views/users/users-list/users-list.componen
 import { UserCreateComponent } from './views/users/user-create/user-create.component';
 import { UserEditComponent } from './views/users/user-edit/user-edit.component';
 import { StaffComponent } from './views/staff/staff.component';
+import { StaffListComponent } from './views/staff/staff-list/staff-list.component';
+import { StaffCreateComponent } from './views/staff/staff-create/staff-create.component';
+import { StaffEditComponent } from './views/staff/staff-edit/staff-edit.component';
 import { TransactionComponent } from './views/transactions/transaction/transaction.component';
 import { TransactionsListComponent } from './views/transactions/transactions-list/transactions-list.component';
 import {ResourcesComponent} from './views/resources/resources.component';
-import {ListComponent} from './views/resources/list/list.component';
+import {ResourcesListComponent} from './views/resources/resources-list/resources-list.component';
+import {ResourceCreateComponent} from './views/resources/resource-create/resource-create.component';
+import {ResourceEditComponent} from './views/resources/resource-edit/resource-edit.component';
 import {CreateComponent} from './views/resources/create/create.component';
 import {ReportsComponent} from './views/reports/reports.component'
+import { LoansComponent } from './views/transactions/loans/loans.component';
+import { SavingsComponent } from './views/transactions/savings/savings.component';
+import { DividendComponent } from './views/transactions/dividend/dividend.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -49,6 +59,8 @@ const routes: Routes = [
         children: [
           { path: '', redirectTo: 'list', pathMatch: 'full' },
           { path: 'list', component: GroupListComponent },
+          {path:'create', component: GroupCreateComponent},
+          {path:'edit', component: GroupEditComponent}
         ],
       },
       {
@@ -65,6 +77,19 @@ const routes: Routes = [
         children:[
           {path: '', redirectTo: 'list', pathMatch:'full'},
           {path: 'list', component: TransactionsListComponent},
+          {path:'savings', 
+          component: SavingsComponent,
+        children:[]},
+        {path:'loans', 
+        component:LoansComponent,
+      children:[
+
+      ]},
+      {path:'dividends',
+       component:DividendComponent,
+    children:[
+
+    ]}
         ]
       },
       {
@@ -76,7 +101,9 @@ const routes: Routes = [
         component: ResourcesComponent,
         children:[
           {path:'', redirectTo:'list', pathMatch:'full'},
-          {path:'list', component:ListComponent}
+          {path:'list', component:ResourcesListComponent},
+          {path:'create', component: ResourceCreateComponent},
+          {path:'edit', component: ResourceEditComponent}
         ]
       },
       {
@@ -92,6 +119,12 @@ const routes: Routes = [
       {
         path: 'staff',
         component: StaffComponent,
+        children:[
+          {path:'', redirectTo:'list', pathMatch:'full'},
+          {path:'list', component:StaffListComponent},
+          {path:'create', component:StaffCreateComponent},
+          {path:'edit', component:StaffEditComponent},
+        ]
       },
       {
         path: '',

@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Group list ({{ count }} groups)</h3>
+        <h3 class="card-title">Resources list </h3>
 
         <div class="card-tools">
           <button
@@ -75,21 +75,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="text-center no-display" *ngIf="count < 1">
+            <tr class="text-center no-display">
               <td class="text-center" colSpan="7">No orders in list</td>
             </tr>
             <tr
-              *ngFor="
-                let g of groups
-                  | paginate
-                    : { itemsPerPage: 10, currentPage: p, totalItems: count }
-              "
+             
             >
-              <td>{{ g.group_code }}</td>
-              <td>{{ g.branch_name }}</td>
-              <td>{{ g.group_name }}</td>
-              <td>{{ g.group_location }}</td>
-              <td>{{ g.group_town }}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
               <td>Active</td>
 
               <td><span><a routerLink="../edit">Edit</a></span> / <span><a routerLink="#">Delete</a></span></td>
@@ -100,13 +96,7 @@
       </div>
       <!-- /.card-body -->
       <div class="card-footer">
-        <pagination-controls
-          (pageChange)="p = $event"
-          maxSize="9"
-          directionLinks="true"
-          autoHide="true"
-          responsive="true"
-        ></pagination-controls>
+       
       </div>
       <!-- /.card-footer-->
     </div>

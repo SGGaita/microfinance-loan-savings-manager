@@ -42,6 +42,18 @@ import { ReportsComponent } from './views/reports/reports.component';
 import { UsersListComponent } from './views/users/users-list/users-list.component';
 import { UserCreateComponent } from './views/users/user-create/user-create.component';
 import { UserEditComponent } from './views/users/user-edit/user-edit.component';
+import { GroupCreateComponent } from './views/group/group-create/group-create.component';
+import { GroupEditComponent } from './views/group/group-edit/group-edit.component';
+import { StaffListComponent } from './views/staff/staff-list/staff-list.component';
+import { StaffEditComponent } from './views/staff/staff-edit/staff-edit.component';
+import { StaffCreateComponent } from './views/staff/staff-create/staff-create.component';
+import { ResourcesListComponent } from './views/resources/resources-list/resources-list.component';
+import { ResourceCreateComponent } from './views/resources/resource-create/resource-create.component';
+import { ResourceEditComponent } from './views/resources/resource-edit/resource-edit.component';
+import { SavingsComponent } from './views/transactions/savings/savings.component';
+import { LoansComponent } from './views/transactions/loans/loans.component';
+import { DividendsComponent } from './views/transactions/dividends/dividends.component';
+import { DividendComponent } from './views/transactions/dividend/dividend.component';
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -77,6 +89,18 @@ registerLocaleData(localeEn, 'en-EN');
     UsersListComponent,
     UserCreateComponent,
     UserEditComponent,
+    GroupCreateComponent,
+    GroupEditComponent,
+    StaffListComponent,
+    StaffEditComponent,
+    StaffCreateComponent,
+    ResourcesListComponent,
+    ResourceCreateComponent,
+    ResourceEditComponent,
+    SavingsComponent,
+    LoansComponent,
+    DividendsComponent,
+    DividendComponent,
   ],
   imports: [
     BrowserModule,
